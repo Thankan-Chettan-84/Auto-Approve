@@ -68,9 +68,9 @@ async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
          ]]
          reply_markup = InlineKeyboardMarkup(buttons)    
          await client.send_message(chat_id=user.id, text=TEXT.format(mention=user.mention, title=chat.title), reply_markup=InlineKeyboardMarkup(buttons), parse_mode=enums.ParseMode.HTML, disable_web_page_preview=True)
-     except errors.PeerIdInvalid as e:
+    except errors.PeerIdInvalid as e:
          print("user isn't start bot(means group)")
-     except Exception as err:
+    except Exception as err:
         print(str(err))    
 
 print("Auto Approved Bot")
