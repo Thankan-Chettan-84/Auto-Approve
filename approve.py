@@ -48,11 +48,11 @@ APPROVED = environ.get("APPROVED_WELCOME", "on").lower()
 @pr0fess0r_99.on_message(filters.private & filters.command(["start"]))
 async def start(client: pr0fess0r_99, message: Message):
     #approvedbot = await client.get_me() 
-    buttons = [[
+    button = [[
                 InlineKeyboardButton('♻️ GROUP', url='https://t.me/MovieJunctionGrp'),
                 InlineKeyboardButton('CHANNELS 🏷️', url='https://t.me/Mj_Linkz/1318')
          ]]
-    await client.send_message(chat_id=message.chat.id, text=f"<b>Hᴇʟʟᴏ {message.from_user.mention}!\n\n<blockquote>🤖 I'ᴀᴍ Aɴ Aᴜᴛᴏ Aᴩᴩʀᴏᴠᴀʟ Bᴏᴛ 💥</blockquote>\n\n⚠️ 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗚𝗿𝗼𝘂𝗽 & 𝗖𝗵𝗮𝗻𝗻𝗲𝗹𝘀 𝘁𝗼 𝗞𝗻𝗼𝘄 𝗠𝗼𝗿𝗲 👇", reply_markup=InlineKeyboardMarkup(button), parse_mode=enums.ParseMode.HTML, disable_web_page_preview=True)
+    await client.send_message(chat_id=message.chat.id, text=f"<b>Hᴇʟʟᴏ {message.from_user.mention}!\n\n<blockquote>🤖 I'ᴀᴍ Aɴ Aᴜᴛᴏ Aᴩᴩʀᴏᴠᴀʟ Bᴏᴛ 💥</blockquote></b>\n\n⚠️ 𝗝𝗼𝗶𝗻 𝗢𝘂𝗿 𝗚𝗿𝗼𝘂𝗽 & 𝗖𝗵𝗮𝗻𝗻𝗲𝗹𝘀 𝘁𝗼 𝗞𝗻𝗼𝘄 𝗠𝗼𝗿𝗲 👇", reply_markup=InlineKeyboardMarkup(button), parse_mode=enums.ParseMode.HTML, disable_web_page_preview=True)
 
 @pr0fess0r_99.on_chat_join_request((filters.group | filters.channel) & filters.chat(CHAT_ID) if CHAT_ID else (filters.group | filters.channel))
 async def autoapprove(client: pr0fess0r_99, message: ChatJoinRequest):
